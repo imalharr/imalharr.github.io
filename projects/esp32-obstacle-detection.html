@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESP32 Obstacle Detection System - Meghmalhar Bhowmick</title>
+  <meta name="description" content="ESP32-based obstacle detection system for visually impaired navigation assistance. Built at IIIT Delhi Electronics Design Carnival.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- PROJECT HERO -->
+<section id="hero" style="min-height: auto; padding: 8rem 2rem 4rem;">
+  <div class="section-label">Project</div>
+  <h1>ESP32 Obstacle Detection System</h1>
+  <p class="hero-sub" style="margin-bottom: 0;">Navigation assistant for visually impaired users. Built at IIIT Delhi Electronics Design Carnival, July 2025.</p>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECT OVERVIEW -->
+<section id="overview">
+  <div class="section-label">Overview</div>
+  <h2>The Problem</h2>
+  <p style="color: #ccc; font-size: 15px; line-height: 1.8;">
+    Visually impaired individuals face significant challenges in navigating unfamiliar environments. While guide dogs and canes provide some assistance, they have limitations. I wanted to build a technology-based solution that could provide real-time, adaptive feedback about obstacles in the user's path.
+  </p>
+
+  <h2 style="margin-top: 2rem;">The Solution</h2>
+  <p style="color: #ccc; font-size: 15px; line-height: 1.8;">
+    An ESP32-based system using an HC-SR04 ultrasonic sensor to detect obstacles. The system provides proximity-adaptive audio feedback through a buzzer that increases in frequency as obstacles get closer. The system also integrates with Blynk for remote control and features a real-time web server with a dark-themed UI for sighted users to monitor the system.
+  </p>
+</section>
+
+<hr class="divider">
+
+<!-- TECHNICAL SPECS -->
+<section id="specs">
+  <div class="section-label">Technical Specifications</div>
+  <h2>Hardware & Components</h2>
+  <div class="beyond">
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Microcontroller:</strong> ESP32 (dual-core, WiFi-enabled)</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Sensor:</strong> HC-SR04 Ultrasonic Sensor (range: 2cm - 400cm)</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Actuator:</strong> Passive Buzzer with PWM frequency control</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Display:</strong> 16x2 LCD Display (I2C interface)</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Connectivity:</strong> WiFi (via ESP32) for Blynk integration</div>
+    </div>
+  </div>
+
+  <h2 style="margin-top: 2rem;">Key Features</h2>
+  <div class="beyond">
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Proximity-Adaptive Buzzer:</strong> Buzzer frequency increases as obstacles get closer, providing intuitive feedback.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Blynk App Integration:</strong> Remote mute/control of the system via smartphone app.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Real-Time Web Dashboard:</strong> Dark-themed web UI displaying live distance data and system status.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>LCD Display:</strong> Real-time distance readings on a portable display.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Low Power Consumption:</strong> Optimized code for extended battery life.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- DEVELOPMENT PROCESS -->
+<section id="process">
+  <div class="section-label">Development</div>
+  <h2>How It Was Built</h2>
+  <p style="color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem;">
+    This project was developed during the Electronics Design Carnival at IIIT Delhi (July 7-18, 2025). Over two weeks, I attended lectures on circuit design, PCB layout, IoT architecture, and prototyping. The hands-on approach allowed me to move from concept to working prototype quickly.
+  </p>
+  <p style="color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem;">
+    <strong>Key Learning Moments:</strong>
+  </p>
+  <div class="beyond">
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text">Understanding sensor calibration and dealing with real-world noise in ultrasonic readings.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text">Implementing PWM (Pulse Width Modulation) to control buzzer frequency dynamically.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text">Building a web server on the ESP32 to serve real-time data to a browser.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text">Integrating third-party IoT platforms (Blynk) for remote control and monitoring.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CHALLENGES & SOLUTIONS -->
+<section id="challenges">
+  <div class="section-label">Challenges</div>
+  <h2>What I Learned</h2>
+  <div class="ach-grid">
+    <div class="ach">
+      <div class="ach-title">Sensor Noise & Calibration</div>
+      <div class="ach-detail">Ultrasonic sensors can be noisy. Solution: Implemented a rolling average filter to smooth readings.</div>
+    </div>
+    <div class="ach">
+      <div class="ach-title">Power Management</div>
+      <div class="ach-detail">WiFi on ESP32 drains battery quickly. Solution: Implemented sleep modes and optimized WiFi connection intervals.</div>
+    </div>
+    <div class="ach">
+      <div class="ach-title">Frequency Mapping</div>
+      <div class="ach-detail">Converting distance to buzzer frequency in a way that feels intuitive. Solution: Logarithmic mapping to match human perception.</div>
+    </div>
+    <div class="ach">
+      <div class="ach-title">User Testing</div>
+      <div class="ach-detail">Getting feedback from actual users to refine the system. Solution: Collaborated with accessibility experts during the carnival.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- IMPACT & FUTURE -->
+<section id="impact">
+  <div class="section-label">Impact & Future</div>
+  <h2>What's Next?</h2>
+  <p style="color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem;">
+    This project demonstrated the potential of IoT for accessibility. Future enhancements could include:
+  </p>
+  <div class="beyond">
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Multiple Sensors:</strong> Add sensors on multiple sides for 360-degree obstacle detection.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Machine Learning:</strong> Train a model to distinguish between different types of obstacles (walls, people, stairs).</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>GPS Integration:</strong> Add location tracking and route planning for navigation assistance.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Wearable Form Factor:</strong> Miniaturize the system into a wearable device (glasses, armband, etc.).</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SKILLS USED -->
+<section id="skills-used">
+  <div class="section-label">Skills & Technologies</div>
+  <h2>What I Used</h2>
+  <div style="margin-top: 2rem;">
+    <div class="tags">
+      <span class="tag accent">ESP32</span>
+      <span class="tag accent">C++</span>
+      <span class="tag accent">Embedded Systems</span>
+      <span class="tag accent">IoT</span>
+      <span class="tag accent">Sensors</span>
+      <span class="tag">HTML/CSS</span>
+      <span class="tag">Blynk</span>
+      <span class="tag">PWM</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- LINKS & RESOURCES -->
+<section id="links" style="text-align: center;">
+  <h2>Resources</h2>
+  <p style="color: var(--muted); margin-bottom: 2rem;">Check out the code and documentation.</p>
+  <div class="contact-links">
+    <a href="https://github.com/imalharr" target="_blank" class="btn">GitHub Repository</a>
+    <a href="https://linkedin.com/in/malharm" target="_blank" class="btn">LinkedIn Post</a>
+    <a href="mailto:meghmalharbhowmick@gmail.com" class="btn btn-primary">Ask Questions</a>
+  </div>
+</section>
+
+<script src="../js/nav.js"></script>
+</body>
+</html>
