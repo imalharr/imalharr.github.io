@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meghmalhar Bhowmick</title>
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #111111;
+    --bg3: #1a1a1a;
+    --border: rgba(255,255,255,0.08);
+    --border2: rgba(255,255,255,0.14);
+    --text: #f0f0f0;
+    --muted: #888;
+    --accent: #7dd3b0;
+    --accent2: #a78bfa;
+    --red: #f87171;
+    --font: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font); font-size: 16px; line-height: 1.7; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(10,10,10,0.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; }
+  .nav-logo { font-size: 15px; font-weight: 600; letter-spacing: 0.02em; color: var(--text); text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 1.5rem; list-style: none; }
+  .nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+
+  /* SECTIONS */
+  section { max-width: 860px; margin: 0 auto; padding: 5rem 2rem; }
+  .section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 1rem; }
+
+  /* HERO */
+  #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; max-width: 860px; margin: 0 auto; padding: 6rem 2rem 4rem; }
+  .hero-tag { display: inline-block; font-size: 12px; background: rgba(125,211,176,0.1); color: var(--accent); border: 1px solid rgba(125,211,176,0.2); border-radius: 20px; padding: 4px 14px; margin-bottom: 1.5rem; }
+  h1 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 1rem; }
+  h1 .dim { color: var(--muted); }
+  .hero-sub { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin-bottom: 2rem; line-height: 1.6; }
+  .hero-sub strong { color: var(--text); font-weight: 500; }
+  .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; transition: all 0.2s; border: 1px solid var(--border2); color: var(--muted); background: var(--bg2); }
+  .btn:hover { color: var(--text); border-color: rgba(255,255,255,0.25); background: var(--bg3); }
+  .btn-primary { background: var(--accent); color: #0a0a0a; border-color: var(--accent); }
+  .btn-primary:hover { background: #9de8c8; border-color: #9de8c8; color: #0a0a0a; }
+  .scroll-hint { margin-top: 4rem; font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+  .scroll-hint::before { content: ''; display: block; width: 24px; height: 1px; background: var(--muted); }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid var(--border); max-width: 860px; margin: 0 auto; }
+
+  /* WHAT I DO */
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 2rem; }
+  .tile { background: var(--bg2); padding: 1.5rem; transition: background 0.2s; }
+  .tile:hover { background: var(--bg3); }
+  .tile-icon { font-size: 20px; margin-bottom: 0.75rem; }
+  .tile-title { font-size: 15px; font-weight: 600; margin-bottom: 0.4rem; }
+  .tile-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* ABOUT */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem; }
+  .about-text { font-size: 15px; color: #ccc; line-height: 1.8; }
+  .about-text p + p { margin-top: 1rem; }
+  .stat-grid { display: flex; flex-direction: column; gap: 1rem; }
+  .stat { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.25rem; }
+  .stat-num { font-size: 1.6rem; font-weight: 700; color: var(--accent); letter-spacing: -0.02em; }
+  .stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+  /* PROJECTS */
+  .projects { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 2rem; }
+  .project { background: var(--bg2); padding: 1.5rem 1.75rem; display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: start; transition: background 0.2s; }
+  .project:hover { background: var(--bg3); }
+  .project-name { font-size: 15px; font-weight: 600; margin-bottom: 0.4rem; }
+  .project-desc { font-size: 13px; color: var(--muted); line-height: 1.5; max-width: 520px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 0.75rem; }
+  .tag { font-size: 11px; padding: 3px 10px; border-radius: 20px; border: 1px solid var(--border2); color: var(--muted); }
+  .tag.accent { border-color: rgba(125,211,176,0.3); color: var(--accent); background: rgba(125,211,176,0.06); }
+  .project-arrow { color: var(--muted); font-size: 18px; margin-top: 2px; }
+
+  /* ACHIEVEMENTS */
+  .ach-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 2rem; }
+  .ach { background: var(--bg2); border: 1px solid var(--border); border-radius: 10px; padding: 1.25rem; }
+  .ach-year { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+  .ach-title { font-size: 14px; font-weight: 600; margin-bottom: 0.3rem; line-height: 1.3; }
+  .ach-detail { font-size: 12px; color: var(--muted); }
+  .ach.featured { border-color: rgba(125,211,176,0.25); background: rgba(125,211,176,0.04); }
+  .ach.featured .ach-title { color: var(--accent); }
+
+  /* BEYOND */
+  .beyond { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+  .beyond-item { display: flex; gap: 1.25rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+  .beyond-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .beyond-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); margin-top: 9px; flex-shrink: 0; }
+  .beyond-text { font-size: 14px; color: #ccc; line-height: 1.6; }
+  .beyond-text strong { color: var(--text); font-weight: 600; }
+
+  /* CONTACT */
+  #contact { text-align: center; }
+  #contact h2 { font-size: 2rem; font-weight: 700; margin-bottom: 0.75rem; }
+  #contact p { color: var(--muted); margin-bottom: 2rem; max-width: 400px; margin-left: auto; margin-right: auto; }
+  .contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* FOOTER */
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--muted); border-top: 1px solid var(--border); }
+
+  /* SECTION HEADINGS */
+  h2 { font-size: 1.75rem; font-weight: 700; letter-spacing: -0.01em; }
+
+  @media (max-width: 600px) {
+    .about-grid { grid-template-columns: 1fr; }
+    .ach-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    h1 { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#hero">malhar<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#achievements">Achievements</a></li>
+    <li><a href="#beyond">Beyond</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-tag">Howrah, West Bengal · Class 11 PCM+CS incoming</div>
+  <h1>Meghmalhar<br><span class="dim">Bhowmick.</span></h1>
+  <p class="hero-sub">
+    I build <strong>IoT systems</strong>, chair <strong>MUN committees</strong>, rescue turtles barehanded, and write things people actually read. Currently 15. Consistently the youngest in every room I walk into.
+  </p>
+  <div class="hero-links">
+    <a href="#projects" class="btn btn-primary">See my work</a>
+    <a href="https://linkedin.com/in/malharm" target="_blank" class="btn">LinkedIn</a>
+    <a href="https://instagram.com/imalharr" target="_blank" class="btn">Instagram</a>
+    <a href="mailto:meghmalhar@gmail.com" class="btn">Email me</a>
+  </div>
+  <div class="scroll-hint">scroll to explore</div>
+</section>
+
+<hr class="divider">
+
+<!-- WHAT I DO -->
+<section id="what-i-do">
+  <div class="section-label">What I do</div>
+  <h2>One box was never enough.</h2>
+  <div class="tiles">
+    <div class="tile">
+      <div class="tile-icon">⚡</div>
+      <div class="tile-title">Electronics & IoT</div>
+      <div class="tile-desc">ESP32, C++, sensor integration, real-time web interfaces, PCB basics. Built at IIIT Delhi alongside B.Tech students.</div>
+    </div>
+    <div class="tile">
+      <div class="tile-icon">🎙</div>
+      <div class="tile-title">MUN & Policy</div>
+      <div class="tile-desc">Chaired committees, drafted charters, delivered speeches, earned verbal mentions. Designed evaluation systems from scratch.</div>
+    </div>
+    <div class="tile">
+      <div class="tile-icon">✍️</div>
+      <div class="tile-title">Writing & Creative</div>
+      <div class="tile-desc">Competition-winning essays and stories. Published in local newspapers. VFX production for school events. Video editing.</div>
+    </div>
+    <div class="tile">
+      <div class="tile-icon">🏛</div>
+      <div class="tile-title">Leadership</div>
+      <div class="tile-desc">Head Boy for 3 consecutive years. Event management, public speaking in 3 languages, team building.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">About</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm Malhar. My name means "the raag that brings rain" — Megh (cloud) + Malhar (the rain raag). It's a complete weather event, which feels about right.</p>
+      <p>I've been the youngest person in most rooms I've entered: the youngest at IIIT Delhi's Electronics Design Carnival, the youngest on a 44km coastal conservation trek through restricted Odisha coastline, the youngest delegate at multiple MUNs.</p>
+      <p>I just finished Class 10 boards and I'm headed into PCM + Computer Science. I want to build things that work in the real world — circuits, systems, policies, whatever the problem needs.</p>
+    </div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-num">4x</div>
+        <div class="stat-label">Bihar State Champion, WIZ Spell Bee</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">3 yrs</div>
+        <div class="stat-label">Head Boy, Podar International School</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">44 km</div>
+        <div class="stat-label">Coastal conservation trek, Odisha (March 2026)</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">#1</div>
+        <div class="stat-label">IEO International Rank, Class 1 (SOF)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Projects</div>
+  <h2>Things I've actually built.</h2>
+  <div class="projects">
+    <div class="project">
+      <div>
+        <div class="project-name">ESP32 Obstacle Detection System</div>
+        <div class="project-desc">Navigation assistant for visually impaired users. Proximity-adaptive buzzer, Blynk app integration for remote control, real-time dark-themed web server UI, and LCD display. Built during and after IIIT Delhi's Electronics Design Carnival.</div>
+        <div class="tags">
+          <span class="tag accent">ESP32</span>
+          <span class="tag accent">C++</span>
+          <span class="tag">HC-SR04</span>
+          <span class="tag">Blynk IoT</span>
+          <span class="tag">Web Server</span>
+          <span class="tag">Accessibility</span>
+        </div>
+      </div>
+      <div class="project-arrow">→</div>
+    </div>
+    <div class="project">
+      <div>
+        <div class="project-name">Soil Moisture Sensor Web Interface</div>
+        <div class="project-desc">ESP32-based real-time soil moisture monitoring with a custom dark-themed local web server UI. Live data visualization without any cloud dependency.</div>
+        <div class="tags">
+          <span class="tag accent">ESP32</span>
+          <span class="tag accent">C++</span>
+          <span class="tag">HTML/CSS</span>
+          <span class="tag">IoT</span>
+        </div>
+      </div>
+      <div class="project-arrow">→</div>
+    </div>
+    <div class="project">
+      <div>
+        <div class="project-name">Codex Magnifica — MUN Chair's Compendium</div>
+        <div class="project-desc">Designed the complete operating framework for PMUN 2025-26 at Podar International School. Includes marking schemes, committee guides, delegate evaluation rubrics, and procedural documentation.</div>
+        <div class="tags">
+          <span class="tag accent">Policy Design</span>
+          <span class="tag">MUN</span>
+          <span class="tag">Documentation</span>
+          <span class="tag">Systems Design</span>
+        </div>
+      </div>
+      <div class="project-arrow">→</div>
+    </div>
+    <div class="project">
+      <div>
+        <div class="project-name">Charter of the Reclaimed World</div>
+        <div class="project-desc">Post-apocalyptic governance document written for a crisis committee (AHCPARS). A full constitutional framework for a world rebuilt from scratch — rules, rights, power structures.</div>
+        <div class="tags">
+          <span class="tag accent">Crisis Committee</span>
+          <span class="tag">Policy Writing</span>
+          <span class="tag">MUN</span>
+        </div>
+      </div>
+      <div class="project-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <div class="section-label">Achievements</div>
+  <h2>Open competition. No shortcuts.</h2>
+  <div class="ach-grid">
+    <div class="ach featured">
+      <div class="ach-year">2016–17</div>
+      <div class="ach-title">IEO International Rank 1</div>
+      <div class="ach-detail">SOF International English Olympiad, Class 1</div>
+    </div>
+    <div class="ach featured">
+      <div class="ach-year">2019–20</div>
+      <div class="ach-title">WIZ Spell Bee National Rank 4</div>
+      <div class="ach-detail">Bihar State Rank 1 (3rd consecutive year)</div>
+    </div>
+    <div class="ach">
+      <div class="ach-year">2021–22</div>
+      <div class="ach-title">WIZ Spell Bee National Rank 12</div>
+      <div class="ach-detail">Bihar State Rank 1 · Delhi World Public School, Muzaffarpur</div>
+    </div>
+    <div class="ach">
+      <div class="ach-year">2025</div>
+      <div class="ach-title">THSMUN Verbal Mention</div>
+      <div class="ach-detail">OSCE Delegate · The Heritage School, Kolkata</div>
+    </div>
+    <div class="ach">
+      <div class="ach-year">Jul 2025</div>
+      <div class="ach-title">Electronics Design Carnival, IIIT Delhi</div>
+      <div class="ach-detail">Youngest participant · ECE Dept, Prof. A V Subramanyam · 2-week intensive</div>
+    </div>
+    <div class="ach">
+      <div class="ach-year">Jun 2024</div>
+      <div class="ach-title">Young Changemakers Bootcamp</div>
+      <div class="ach-detail">IIT Delhi Campus · The Tale of Humankind</div>
+    </div>
+    <div class="ach">
+      <div class="ach-year">Jan 2026</div>
+      <div class="ach-title">1st Place — Byte-Size Story Writing</div>
+      <div class="ach-detail">Creative Art Olympiad · Podar International School</div>
+    </div>
+    <div class="ach">
+      <div class="ach-year">May 2025</div>
+      <div class="ach-title">1st Place — Essay Writing</div>
+      <div class="ach-detail">"My Actions for a Greener Tomorrow" · World Environment Day</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- BEYOND -->
+<section id="beyond">
+  <div class="section-label">Beyond the resume</div>
+  <h2>The stuff that actually defines me.</h2>
+  <div class="beyond">
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text">
+        <strong>Rescued a stranded Olive Ridley turtle barehanded.</strong> March 2026. Day 2 of a 44km coastal trek through restricted Odisha coastline. Led by Arijit Dey, a nominee for the President's Scout Award. Rushikulya is one of the only places on earth where the Arribada — mass Olive Ridley nesting — happens. The rescue is on video. The story ran in Aajkal (Bengali daily, Kolkata).
+      </div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text">
+        <strong>Youngest at IIIT Delhi's Electronics Design Carnival.</strong> July 2025. Class 10 student among B.Tech students, engineers, and professors. Celebrated my 15th birthday in the hostel. Lived alone, built real hardware, came back with a working IoT project.
+      </div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text">
+        <strong>Chaired my school's MUN the day before board exam prep began.</strong> Designed the entire evaluation framework from scratch. Delegates had no idea their 15-year-old chair built the rubric they were being scored on.
+      </div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text">
+        <strong>Left for a 44km trek the same day my last board exam ended.</strong> March 7, 2026. Boards in the morning. Bus to Odisha in the evening. Pitched my own tent, rationed my own food, bathed in the open sea. Youngest in the group, again.
+      </div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text">
+        <strong>VFX and SFX production for Podar Annual Day 2023.</strong> Sole producer. Not a club project. Not a team effort. One person, one stage, one show.
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Contact</div>
+  <h2>Let's talk.</h2>
+  <p>Open to opportunities, collaborations, and conversations that go somewhere interesting.</p>
+  <div class="contact-links">
+    <a href="mailto:meghmalhar@gmail.com" class="btn btn-primary">Email me</a>
+    <a href="https://linkedin.com/in/malharm" target="_blank" class="btn">LinkedIn</a>
+    <a href="https://instagram.com/imalharr" target="_blank" class="btn">Instagram</a>
+  </div>
+</section>
+
+<footer>
+  Built by Meghmalhar Bhowmick · Howrah, West Bengal · 2026
+</footer>
+
+</body>
+</html>
