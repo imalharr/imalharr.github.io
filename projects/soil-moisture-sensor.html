@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soil Moisture Sensor Web Interface - Meghmalhar Bhowmick</title>
+  <meta name="description" content="ESP32-based soil moisture monitoring system with real-time web dashboard. IoT project for agriculture and environmental monitoring.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<!-- PROJECT HERO -->
+<section id="hero" style="min-height: auto; padding: 8rem 2rem 4rem;">
+  <div class="section-label">Project</div>
+  <h1>Soil Moisture Sensor Web Interface</h1>
+  <p class="hero-sub" style="margin-bottom: 0;">Real-time soil monitoring system with ESP32 and a custom dark-themed web dashboard. IoT fundamentals applied to agriculture.</p>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECT OVERVIEW -->
+<section id="overview">
+  <div class="section-label">Overview</div>
+  <h2>The Problem</h2>
+  <p style="color: #ccc; font-size: 15px; line-height: 1.8;">
+    Farmers and gardeners often struggle to know when to water their plants. Too much water wastes resources and can damage roots. Too little water stresses plants and reduces yield. Manual checking is time-consuming and imprecise. I wanted to build a system that could automatically monitor soil moisture and provide real-time feedback.
+  </p>
+
+  <h2 style="margin-top: 2rem;">The Solution</h2>
+  <p style="color: #ccc; font-size: 15px; line-height: 1.8;">
+    An ESP32-based soil moisture monitoring system that reads sensor data and displays it on a custom web dashboard. The dashboard shows real-time moisture levels, historical trends, and alerts when soil is too dry or too wet. The dark-themed UI is easy on the eyes and provides clear, actionable information.
+  </p>
+</section>
+
+<hr class="divider">
+
+<!-- TECHNICAL SPECS -->
+<section id="specs">
+  <div class="section-label">Technical Specifications</div>
+  <h2>Hardware & Components</h2>
+  <div class="beyond">
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Microcontroller:</strong> ESP32 with WiFi connectivity</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Sensor:</strong> Capacitive Soil Moisture Sensor (analog output)</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Power:</strong> USB-powered with option for battery backup</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Data Storage:</strong> EEPROM for local data logging</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Communication:</strong> WiFi for real-time data transmission to web server</div>
+    </div>
+  </div>
+
+  <h2 style="margin-top: 2rem;">Key Features</h2>
+  <div class="beyond">
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Real-Time Data Display:</strong> Live moisture readings updated every few seconds on the web dashboard.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Historical Trends:</strong> Graph showing moisture levels over time (hourly, daily, weekly).</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Smart Alerts:</strong> Notifications when soil is too dry (needs watering) or too wet (risk of root rot).</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Calibration Tools:</strong> Easy calibration for different soil types and sensor variations.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Dark-Themed UI:</strong> Custom web interface with consistent styling and easy readability.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Mobile Responsive:</strong> Works on phones, tablets, and desktops.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- DEVELOPMENT PROCESS -->
+<section id="process">
+  <div class="section-label">Development</div>
+  <h2>How It Was Built</h2>
+  <p style="color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem;">
+    This project started as a way to understand IoT data collection and visualization. I began by learning how to read analog sensor data on the ESP32, then moved on to setting up a local web server to display that data. The final step was designing a UI that made the data easy to understand at a glance.
+  </p>
+
+  <h2 style="margin-top: 2rem;">Tech Stack</h2>
+  <div class="ach-grid">
+    <div class="ach featured">
+      <div class="ach-title">Backend</div>
+      <div class="ach-detail">ESP32 running C++ code. Reads sensor data, processes it, and serves it via HTTP.</div>
+    </div>
+    <div class="ach featured">
+      <div class="ach-title">Frontend</div>
+      <div class="ach-detail">HTML/CSS/JavaScript. Custom dark theme. Chart.js for data visualization.</div>
+    </div>
+    <div class="ach">
+      <div class="ach-title">Data Storage</div>
+      <div class="ach-detail">EEPROM on ESP32 for local logging. Optional cloud integration for long-term storage.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CHALLENGES & SOLUTIONS -->
+<section id="challenges">
+  <div class="section-label">Challenges</div>
+  <h2>What I Learned</h2>
+  <div class="ach-grid">
+    <div class="ach">
+      <div class="ach-title">Sensor Calibration</div>
+      <div class="ach-detail">Capacitive sensors vary between units and soil types. Solution: Implemented a two-point calibration system (dry and wet reference points).</div>
+    </div>
+    <div class="ach">
+      <div class="ach-title">WiFi Stability</div>
+      <div class="ach-detail">WiFi connection could drop, causing data loss. Solution: Implemented local data logging and automatic reconnection logic.</div>
+    </div>
+    <div class="ach">
+      <div class="ach-title">Power Consumption</div>
+      <div class="ach-detail">Continuous WiFi and sensor readings drain power quickly. Solution: Implemented sleep modes and optimized update intervals.</div>
+    </div>
+    <div class="ach">
+      <div class="ach-title">Data Visualization</div>
+      <div class="ach-detail">Displaying trends clearly without overwhelming the user. Solution: Used Chart.js with configurable time ranges and zoom functionality.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- APPLICATIONS -->
+<section id="applications">
+  <div class="section-label">Applications</div>
+  <h2>Real-World Uses</h2>
+  <div class="beyond">
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Home Gardening:</strong> Monitor houseplants and garden beds. Get alerts when watering is needed.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Agriculture:</strong> Large-scale crop monitoring. Optimize irrigation schedules to save water and improve yield.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Greenhouse Management:</strong> Automate watering systems based on real-time soil data.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Environmental Research:</strong> Monitor soil conditions in natural ecosystems for scientific studies.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Smart Landscaping:</strong> Reduce water waste in commercial landscaping by automating irrigation.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FUTURE ENHANCEMENTS -->
+<section id="future">
+  <div class="section-label">Future</div>
+  <h2>What's Next?</h2>
+  <div class="beyond">
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Multiple Sensors:</strong> Monitor multiple plants/areas simultaneously with a network of sensors.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Automatic Watering:</strong> Add a relay to control solenoid valves for automated irrigation.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Cloud Integration:</strong> Store data in the cloud for long-term analysis and access from anywhere.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Machine Learning:</strong> Predict watering needs based on weather, plant type, and historical data.</div>
+    </div>
+    <div class="beyond-item">
+      <div class="beyond-dot"></div>
+      <div class="beyond-text"><strong>Mobile App:</strong> Native iOS/Android app for on-the-go monitoring and control.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SKILLS USED -->
+<section id="skills-used">
+  <div class="section-label">Skills & Technologies</div>
+  <h2>What I Used</h2>
+  <div style="margin-top: 2rem;">
+    <div class="tags">
+      <span class="tag accent">ESP32</span>
+      <span class="tag accent">C++</span>
+      <span class="tag accent">IoT</span>
+      <span class="tag accent">Sensors</span>
+      <span class="tag accent">HTML/CSS</span>
+      <span class="tag accent">JavaScript</span>
+      <span class="tag">Chart.js</span>
+      <span class="tag">Data Visualization</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- LINKS & RESOURCES -->
+<section id="links" style="text-align: center;">
+  <h2>Resources</h2>
+  <p style="color: var(--muted); margin-bottom: 2rem;">Check out the code and documentation.</p>
+  <div class="contact-links">
+    <a href="https://github.com/imalharr" target="_blank" class="btn">GitHub Repository</a>
+    <a href="https://linkedin.com/in/malharm" target="_blank" class="btn">LinkedIn</a>
+    <a href="mailto:meghmalharbhowmick@gmail.com" class="btn btn-primary">Ask Questions</a>
+  </div>
+</section>
+
+<script src="../js/nav.js"></script>
+</body>
+</html>
