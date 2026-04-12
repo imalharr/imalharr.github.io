@@ -3,303 +3,330 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MUN Governance & Policy Writing - Meghmalhar Bhowmick</title>
-  <meta name="description" content="MUN governance, policy writing, and committee design by Meghmalhar Bhowmick. PMUN Chairperson, charter author, evaluation system designer.">
+  <title>MUN Governance — Meghmalhar Bhowmick</title>
+  <meta name="description" content="MUN governance, policy writing, and committee design. PMUN 2025-26 Chairperson. Codex Magnifica author.">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── PAGE-SPECIFIC: Document / Policy feel ──
+       IBM Plex Sans body with heavier use of serif-adjacent structure.
+       Looks like a formal record or official document. */
+
+    .doc-header {
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+
+    .doc-header-top {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border2);
+      padding: 0.6rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .doc-header-top .doc-id {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+
+    .doc-header-top .doc-status {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .doc-header-body {
+      padding: 1rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .doc-field {
+      padding: 0.5rem 1rem 0.5rem 0;
+      border-right: 1px solid var(--border);
+      margin-right: 1rem;
+    }
+
+    .doc-field:last-child {
+      border-right: none;
+      margin-right: 0;
+    }
+
+    .doc-field-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.25rem;
+    }
+
+    .doc-field-val {
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .record {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .record-row {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    .record-row:last-child { border-bottom: none; }
+    .record-row:hover { background: var(--bg2); }
+
+    .record-key {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.7rem 1rem;
+      border-right: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      padding-top: 0.75rem;
+    }
+
+    .record-val {
+      font-size: 13px;
+      color: #ccc;
+      padding: 0.7rem 1rem;
+      line-height: 1.55;
+    }
+
+    .record-val strong { color: var(--text); font-weight: 500; }
+
+    .scoring-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .scoring-item {
+      background: var(--bg2);
+      padding: 0.9rem 1rem;
+      transition: background 0.15s;
+    }
+
+    .scoring-item:hover { background: var(--bg3); }
+
+    .scoring-item .criterion {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    .scoring-item .points {
+      font-family: var(--mono);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .scoring-item .desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 700px) {
+      .doc-header-body { grid-template-columns: 1fr; }
+      .doc-field { border-right: none; border-bottom: 1px solid var(--border); margin-right: 0; padding-bottom: 0.75rem; margin-bottom: 0.5rem; }
+      .doc-field:last-child { border-bottom: none; }
+      .scoring-grid { grid-template-columns: 1fr; }
+      .record-row { grid-template-columns: 110px 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- PROJECT HERO -->
-<section id="hero" style="min-height: auto; padding: 8rem 2rem 4rem;">
-  <div class="section-label">Project</div>
-  <h1>MUN Governance & Policy Writing</h1>
-  <p class="hero-sub" style="margin-bottom: 0;">Designed marking schemes, committee guides, and delegate evaluation systems from scratch. PMUN 2025-26 Chairperson. Charter author and governance architect.</p>
+<section id="hero">
+  <div class="hero-eyebrow">Project · Governance & Policy</div>
+  <h1>MUN Governance<br><span class="dim">& Policy Writing</span><span class="acc">.</span></h1>
+  <p class="hero-desc">Designed evaluation systems, committee guides, and governance frameworks from scratch. Chaired PMUN 2025-26. Competed as OSCE delegate at THSMUN and LMCMUN.</p>
+  <div class="tags" style="margin-top: 0.75rem;">
+    <span class="tag green">Chairperson</span>
+    <span class="tag green">Policy Writing</span>
+    <span class="tag green">Governance</span>
+    <span class="tag">OSCE</span>
+    <span class="tag">Crisis Committee</span>
+    <span class="tag">Diplomacy</span>
+  </div>
 </section>
 
 <hr class="divider">
 
-<!-- PROJECT OVERVIEW -->
-<section id="overview">
-  <div class="section-label">Overview</div>
-  <h2>What is MUN Governance?</h2>
-  <p style="color: #ccc; font-size: 15px; line-height: 1.8;">
-    Model United Nations (MUN) is more than just a debate competition. It's a simulation of real-world diplomacy and governance. Behind every successful MUN conference is a team of organizers who design the rules, create the committees, write the scenarios, and evaluate the delegates. This is governance work—and it's just as important as the performance on stage.
-  </p>
-
-  <h2 style="margin-top: 2rem;">My Role</h2>
-  <p style="color: #ccc; font-size: 15px; line-height: 1.8;">
-    As PMUN 2025-26 Chairperson, I designed the entire governance framework for the conference. This included creating committee charters, writing evaluation rubrics, designing marking schemes, and building systems to ensure fair and consistent judging. I also served as a delegate at multiple MUNs, giving me insight into what works and what doesn't from both sides.
-  </p>
-</section>
-
-<hr class="divider">
-
-<!-- KEY DOCUMENTS -->
-<section id="documents">
-  <div class="section-label">Key Documents</div>
-  <h2>What I've Created</h2>
-  <div class="ach-grid">
-    <div class="ach featured">
-      <div class="ach-year">2025-26</div>
-      <div class="ach-title">Codex Magnifica</div>
-      <div class="ach-detail">Comprehensive chair's guide for PMUN 2025-26. Covers committee rules, judging criteria, crisis management, and delegate support. 40+ pages of detailed governance.</div>
+<!-- DOCUMENT RECORD -->
+<section>
+  <div class="sec-head">
+    <span class="prompt">$</span>
+    <h2>open <span class="kw">PMUN-2025-26.record</span></h2>
+  </div>
+  <div class="doc-header">
+    <div class="doc-header-top">
+      <span class="doc-id">PMUN / 2025-26 / CHAIR</span>
+      <span class="doc-status">Status: Completed · Nov 2025</span>
     </div>
-    <div class="ach featured">
-      <div class="ach-year">2025-26</div>
-      <div class="ach-title">Charter of the Reclaimed World</div>
-      <div class="ach-detail">Post-apocalyptic governance document for a crisis committee. Detailed scenario, background, and policy questions. Designed to challenge delegates and encourage creative problem-solving.</div>
-    </div>
-    <div class="ach">
-      <div class="ach-year">2025-26</div>
-      <div class="ach-title">Delegate Evaluation Rubric</div>
-      <div class="ach-detail">Multi-dimensional rubric assessing research, diplomacy, public speaking, crisis response, and committee participation. Ensures consistent and fair judging.</div>
-    </div>
-    <div class="ach">
-      <div class="ach-year">2025-26</div>
-      <div class="ach-title">Marking Scheme</div>
-      <div class="ach-detail">Detailed point allocation system for speeches, resolutions, and crisis responses. Transparent and verifiable scoring.</div>
+    <div class="doc-header-body">
+      <div class="doc-field">
+        <div class="doc-field-label">Conference</div>
+        <div class="doc-field-val">Podar Model United Nations 2025-26</div>
+      </div>
+      <div class="doc-field">
+        <div class="doc-field-label">Role</div>
+        <div class="doc-field-val">Chairperson</div>
+      </div>
+      <div class="doc-field">
+        <div class="doc-field-label">Venue</div>
+        <div class="doc-field-val">Podar International School, Howrah</div>
+      </div>
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- GOVERNANCE FRAMEWORK -->
-<section id="framework">
-  <div class="section-label">Framework</div>
-  <h2>How I Designed It</h2>
-  <p style="color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem;">
-    Effective governance requires balancing multiple competing interests: fairness, clarity, flexibility, and engagement. Here's how I approached it:
-  </p>
-
-  <h2 style="margin-top: 2rem;">Key Principles</h2>
-  <div class="beyond">
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Transparency:</strong> All rules, criteria, and scoring systems are clearly documented and communicated upfront. No surprises or hidden criteria.</div>
+<!-- WHAT I BUILT -->
+<section>
+  <div class="sec-head">
+    <span class="prompt">$</span>
+    <h2>cat <span class="kw">deliverables.txt</span></h2>
+  </div>
+  <div class="record">
+    <div class="record-row">
+      <div class="record-key">Codex Magnifica</div>
+      <div class="record-val">Comprehensive chair's guide for PMUN 2025-26. Committee rules, judging criteria, crisis management protocol, delegate support guidelines. Written from scratch — no template.</div>
     </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Fairness:</strong> Rubrics are designed to be objective and verifiable. Multiple judges can score the same delegate and get similar results.</div>
+    <div class="record-row">
+      <div class="record-key">Evaluation Rubric</div>
+      <div class="record-val">Multi-dimensional rubric assessing research, diplomacy, public speaking, crisis response, and committee participation. Designed so two judges scoring the same delegate get similar results.</div>
     </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Inclusivity:</strong> Rules accommodate different delegation sizes, experience levels, and backgrounds. No one is left behind.</div>
+    <div class="record-row">
+      <div class="record-key">Marking Scheme</div>
+      <div class="record-val">Transparent point allocation for speeches, resolutions, and crisis responses. Verifiable. No hidden criteria.</div>
     </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Flexibility:</strong> Systems are designed to handle unexpected situations (missing delegates, technical issues, etc.) without falling apart.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Engagement:</strong> Rules and scenarios are designed to encourage participation and reward creativity, not just memorization.</div>
+    <div class="record-row">
+      <div class="record-key">Committee Guides</div>
+      <div class="record-val">Per-committee briefing documents covering topic background, country positions, policy questions, and procedural rules.</div>
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- COMMITTEE DESIGN -->
-<section id="committees">
-  <div class="section-label">Committee Design</div>
-  <h2>Crafting Scenarios</h2>
-  <p style="color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem;">
-    A good MUN committee isn't just about the topic—it's about the scenario. The scenario sets the stage, defines the stakes, and creates opportunities for delegates to shine. Here's my approach:
-  </p>
-
-  <h2 style="margin-top: 2rem;">Scenario Design Process</h2>
-  <div class="beyond">
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Choose a Real Issue:</strong> Start with a genuine global problem (climate change, conflict, inequality, etc.). Delegates should care about the topic.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Create Stakes:</strong> Design a scenario where decisions have real consequences. Delegates should feel the weight of their choices.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Define Positions:</strong> Each delegate gets a country or organization with a specific position. These should create natural tensions and alliances.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Build in Complexity:</strong> Add hidden agendas, conflicting interests, and moral dilemmas. Real diplomacy is messy.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Plan Crisis Moments:</strong> Introduce unexpected events that force delegates to adapt and respond creatively.</div>
-    </div>
+<!-- SCORING BREAKDOWN -->
+<section>
+  <div class="sec-head">
+    <span class="prompt">$</span>
+    <h2>cat <span class="kw">rubric.txt</span></h2>
   </div>
-
-  <h2 style="margin-top: 2rem;">Example: Charter of the Reclaimed World</h2>
-  <p style="color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 1rem;">
-    This was a post-apocalyptic crisis committee. The scenario: Civilization has collapsed. Delegates represent different survivor groups trying to rebuild society. The challenge: How do you create a fair, functional government from scratch when resources are scarce and trust is broken?
-  </p>
-  <div class="ach-grid">
-    <div class="ach">
-      <div class="ach-title">Stakes</div>
-      <div class="ach-detail">Survival. Every decision affects resource allocation and group survival.</div>
+  <div class="scoring-grid">
+    <div class="scoring-item">
+      <div class="criterion">Diplomacy</div>
+      <div class="points">25 pts</div>
+      <div class="desc">Alliance building, compromise, active listening, adaptability under pressure.</div>
     </div>
-    <div class="ach">
-      <div class="ach-title">Complexity</div>
-      <div class="ach-detail">Different groups have different priorities (farmers want land, scientists want research facilities, military wants security).</div>
+    <div class="scoring-item">
+      <div class="criterion">Research</div>
+      <div class="points">20 pts</div>
+      <div class="desc">Country position accuracy, topic knowledge, factual relevance of arguments.</div>
     </div>
-    <div class="ach">
-      <div class="ach-title">Creativity</div>
-      <div class="ach-detail">Delegates had to invent new governance structures, not just apply existing models.</div>
+    <div class="scoring-item">
+      <div class="criterion">Public Speaking</div>
+      <div class="points">20 pts</div>
+      <div class="desc">Clarity, confidence, persuasion, eye contact, audience engagement.</div>
     </div>
-    <div class="ach">
-      <div class="ach-title">Crisis</div>
-      <div class="ach-detail">Midway through, a natural disaster forces delegates to adapt their plans and respond in real-time.</div>
+    <div class="scoring-item">
+      <div class="criterion">Crisis Response</div>
+      <div class="points">20 pts</div>
+      <div class="desc">Handling unexpected situations. In-character thinking. Creative problem solving.</div>
+    </div>
+    <div class="scoring-item">
+      <div class="criterion">Participation</div>
+      <div class="points">15 pts</div>
+      <div class="desc">Consistent engagement. Meaningful contribution throughout, not just big moments.</div>
+    </div>
+    <div class="scoring-item">
+      <div class="criterion">Why this works</div>
+      <div class="points">100 pts</div>
+      <div class="desc">Rewards well-rounded delegates. A brilliant negotiator wins even without being the loudest speaker.</div>
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- EVALUATION SYSTEM -->
-<section id="evaluation">
-  <div class="section-label">Evaluation</div>
-  <h2>Judging & Scoring</h2>
-  <p style="color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem;">
-    Fair evaluation is the backbone of a good MUN. I designed a multi-dimensional rubric that assesses delegates across several key areas:
-  </p>
-
-  <h2 style="margin-top: 2rem;">Evaluation Dimensions</h2>
-  <div class="beyond">
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Research (20 points):</strong> How well does the delegate understand their country's position, the committee topic, and the broader context? Are facts accurate and relevant?</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Diplomacy (25 points):</strong> Can the delegate build alliances, negotiate compromises, and work with others? Do they listen and adapt?</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Public Speaking (20 points):</strong> Is the delegate clear, confident, and persuasive? Do they make eye contact and engage the audience?</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Crisis Response (20 points):</strong> How does the delegate handle unexpected situations? Do they stay in character and think creatively?</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Committee Participation (15 points):</strong> Is the delegate engaged throughout? Do they contribute meaningfully to discussions?</div>
-    </div>
+<!-- THE HARD PART -->
+<section>
+  <div class="sec-head">
+    <span class="prompt">$</span>
+    <h2>cat <span class="kw">chair-notes.txt</span></h2>
   </div>
-
-  <h2 style="margin-top: 2rem;">Why This Works</h2>
-  <p style="color: #ccc; font-size: 15px; line-height: 1.8;">
-    This rubric rewards well-rounded delegates, not just the loudest speakers. A delegate can win by being a brilliant negotiator, even if they're not the best public speaker. It also encourages judges to look for different types of excellence, not just one narrow definition of success.
-  </p>
-</section>
-
-<hr class="divider">
-
-<!-- DELEGATE EXPERIENCE -->
-<section id="delegate-experience">
-  <div class="section-label">Delegate Experience</div>
-  <h2>My MUN Journey</h2>
-  <p style="color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem;">
-    I haven't just designed MUN systems—I've also competed as a delegate. This dual perspective is crucial. I know what works from both sides.
-  </p>
-
-  <div class="ach-grid">
-    <div class="ach featured">
-      <div class="ach-year">2025</div>
-      <div class="ach-title">THSMUN 2025 - OSCE Delegate</div>
-      <div class="ach-detail">The Heritage School Kolkata. Double delegation with Vaishnavi Srivastava. Reformist diplomatic stance. Verbal Mention awarded.</div>
+  <div class="record">
+    <div class="record-row">
+      <div class="record-key">Hardest part</div>
+      <div class="record-val">Deciding who wins. The rubric helps, but when two delegates have both done excellent work in completely different ways — one a sharp negotiator, one a meticulous researcher — the final call still comes down to judgment. No system eliminates that.</div>
     </div>
-    <div class="ach featured">
-      <div class="ach-year">2024-25</div>
-      <div class="ach-title">LMCMUN - OSCE Delegate</div>
-      <div class="ach-detail">La Martiniere for Boys, Kolkata. Crisis committee experience. Developed crisis response strategies.</div>
+    <div class="record-row">
+      <div class="record-key">What I learned</div>
+      <div class="record-val">Delegates need to trust the judging process completely or the whole simulation breaks. Transparency in criteria matters more than getting every score exactly right.</div>
     </div>
-    <div class="ach">
-      <div class="ach-year">Multiple</div>
-      <div class="ach-title">School MUNs</div>
-      <div class="ach-detail">Participated in and won awards at various school-level MUNs. Built foundational skills and understanding.</div>
-    </div>
-  </div>
-
-  <h2 style="margin-top: 2rem;">Key Insights from Competing</h2>
-  <div class="beyond">
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Clarity Matters:</strong> Delegates need to understand the rules clearly. Ambiguity causes frustration and unfair outcomes.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Flexibility Wins:</strong> The best delegates adapt to unexpected situations. Governance should reward this.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Fairness Builds Trust:</strong> When delegates trust that judging is fair, they compete harder and have more fun.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Scenarios Matter Most:</strong> A brilliant scenario can make an average committee great. A boring scenario can kill even a well-run conference.</div>
+    <div class="record-row">
+      <div class="record-key">Delegate experience</div>
+      <div class="record-val"><strong>THSMUN 2025</strong> — OSCE delegate, The Heritage School Kolkata. Double delegation with Vaishnavi Srivastava. Reformist diplomatic stance. Verbal Mention awarded.<br><br><strong>LMCMUN</strong> — OSCE delegate, La Martiniere for Boys, Kolkata. Crisis committee experience.</div>
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- SKILLS DEMONSTRATED -->
-<section id="skills">
-  <div class="section-label">Skills & Competencies</div>
-  <h2>What This Demonstrates</h2>
-  <div style="margin-top: 2rem;">
-    <div class="tags">
-      <span class="tag accent">Policy Writing</span>
-      <span class="tag accent">Governance Design</span>
-      <span class="tag accent">Leadership</span>
-      <span class="tag accent">Scenario Design</span>
-      <span class="tag accent">Evaluation Systems</span>
-      <span class="tag accent">Diplomacy</span>
-      <span class="tag">Project Management</span>
-      <span class="tag">Communication</span>
-    </div>
+<!-- LINKS -->
+<section>
+  <div class="sec-head">
+    <span class="prompt">$</span>
+    <h2>ping <span class="kw">malhar</span></h2>
   </div>
-</section>
-
-<hr class="divider">
-
-<!-- FUTURE DIRECTION -->
-<section id="future">
-  <div class="section-label">Future</div>
-  <h2>What's Next?</h2>
-  <div class="beyond">
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Continue as Chair:</strong> Refine the PMUN governance framework based on feedback and outcomes.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Publish Guidelines:</strong> Share MUN governance best practices with other conferences and schools.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Mentor New Chairs:</strong> Help younger students learn how to design and run MUN conferences.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Explore Policy Work:</strong> Apply governance design skills to real-world policy and organizational work.</div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- LINKS & RESOURCES -->
-<section id="links" style="text-align: center;">
-  <h2>Get Involved</h2>
-  <p style="color: var(--muted); margin-bottom: 2rem;">Interested in MUN or governance design? Let's talk.</p>
-  <div class="contact-links">
-    <a href="https://linkedin.com/in/malharm" target="_blank" class="btn">LinkedIn</a>
-    <a href="https://instagram.com/imalharr" target="_blank" class="btn">Instagram</a>
-    <a href="mailto:meghmalharbhowmick@gmail.com" class="btn btn-primary">Contact Me</a>
+  <div class="contact-grid">
+    <a href="https://linkedin.com/in/malharm" target="_blank" class="contact-item">
+      <div class="contact-platform">LinkedIn</div>
+      <div class="contact-handle">in/malharm</div>
+    </a>
+    <a href="mailto:meghmalharbhowmick@gmail.com" class="contact-item">
+      <div class="contact-platform">Email</div>
+      <div class="contact-handle">meghmalharbhowmick@gmail.com</div>
+    </a>
+    <a href="../projects.html" class="contact-item">
+      <div class="contact-platform">Back</div>
+      <div class="contact-handle">← all projects</div>
+    </a>
+    <a href="../index.html" class="contact-item">
+      <div class="contact-platform">Home</div>
+      <div class="contact-handle">← imalharr.github.io</div>
+    </a>
   </div>
 </section>
 

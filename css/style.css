@@ -356,7 +356,12 @@ h1 .acc { color: var(--accent); }
   line-height: 1.35;
 }
 
-/* ── PROJECTS ── */
+/* clickable project rows (when wrapped in <a>) */
+a.project {
+  text-decoration: none;
+  color: inherit;
+  display: grid;
+}
 .projects {
   display: flex;
   flex-direction: column;

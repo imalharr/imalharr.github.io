@@ -3,307 +3,276 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VFX & Video Production - Meghmalhar Bhowmick</title>
-  <meta name="description" content="VFX and video production work by Meghmalhar Bhowmick. School events, documentary editing, and visual storytelling.">
+  <title>VFX & Video Production — Meghmalhar Bhowmick</title>
+  <meta name="description" content="VFX and video production by Meghmalhar Bhowmick. School events, documentary editing, trek footage.">
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── PAGE-SPECIFIC: Director's note feel ──
+       More prose-forward, less structured, wider line-length,
+       feels personal rather than like a spec sheet. */
+
+    .prose {
+      font-size: 14px;
+      color: #bbb;
+      line-height: 1.75;
+      max-width: 640px;
+    }
+
+    .prose + .prose { margin-top: 0.9rem; }
+    .prose strong { color: var(--text); font-weight: 500; }
+
+    .pull-quote {
+      border-left: 2px solid var(--accent);
+      padding: 0.5rem 0 0.5rem 1.25rem;
+      margin: 1.25rem 0;
+      font-size: 15px;
+      color: var(--text);
+      font-style: italic;
+      line-height: 1.5;
+      max-width: 560px;
+    }
+
+    .work-item {
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 1px;
+    }
+
+    .work-item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.8rem 1rem;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .work-item-title {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .work-item-date {
+      font-family: var(--mono);
+      font-size: 10px;
+      color: var(--muted);
+    }
+
+    .work-item-body {
+      padding: 0.85rem 1rem;
+      font-size: 13px;
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    .work-item-body strong { color: var(--text); font-weight: 500; }
+
+    .tool-row {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .tool-entry {
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      align-items: center;
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+      gap: 1rem;
+    }
+
+    .tool-entry:last-child { border-bottom: none; }
+    .tool-entry:hover { background: var(--bg2); }
+
+    .tool-name {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text);
+    }
+
+    .tool-use {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .tool-badge {
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 2px 7px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .tool-badge.primary {
+      border: 1px solid rgba(74,222,128,0.25);
+      color: var(--accent);
+      background: rgba(74,222,128,0.05);
+    }
+
+    .tool-badge.secondary {
+      border: 1px solid var(--border2);
+      color: var(--muted);
+    }
+
+    .video-placeholder {
+      background: var(--bg2);
+      border: 1px dashed var(--border2);
+      border-radius: 4px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    @media (max-width: 700px) {
+      .tool-entry { grid-template-columns: 1fr auto; }
+      .tool-use { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- PROJECT HERO -->
-<section id="hero" style="min-height: auto; padding: 8rem 2rem 4rem;">
-  <div class="section-label">Project</div>
-  <h1>VFX & Video Production</h1>
-  <p class="hero-sub" style="margin-bottom: 0;">Sole producer of VFX/SFX for school annual events. Self-edited documentary footage. Strong visual composition and storytelling through video.</p>
+<section id="hero">
+  <div class="hero-eyebrow">Project · VFX & Video</div>
+  <h1>VFX & Video<br><span class="dim">Production</span><span class="acc">.</span></h1>
+  <p class="hero-desc">School annual day VFX. Trek documentary. Instagram reels. Edited alone, on bad hardware, sometimes past 10pm. Getting better every time.</p>
+  <div class="tags" style="margin-top: 0.75rem;">
+    <span class="tag green">DaVinci Resolve</span>
+    <span class="tag green">Kdenlive</span>
+    <span class="tag green">VFX / SFX</span>
+    <span class="tag">Color Grading</span>
+    <span class="tag">Documentary</span>
+    <span class="tag">Storytelling</span>
+  </div>
 </section>
 
 <hr class="divider">
 
-<!-- PROJECT OVERVIEW -->
-<section id="overview">
-  <div class="section-label">Overview</div>
-  <h2>The Work</h2>
-  <p style="color: #ccc; font-size: 15px; line-height: 1.8;">
-    Video production is about more than just recording. It's about telling stories, creating emotions, and guiding the viewer's attention. My work spans from high-energy school events to intimate documentary footage. Every project starts with a clear vision and ends with polished, professional-quality output.
-  </p>
+<!-- THE WORK -->
+<section>
+  <div class="sec-head">
+    <span class="prompt">$</span>
+    <h2>ls ~/<span class="kw">work</span></h2>
+  </div>
 
-  <h2 style="margin-top: 2rem;">Key Projects</h2>
-  <div class="ach-grid">
-    <div class="ach featured">
-      <div class="ach-year">2023-2025</div>
-      <div class="ach-title">Podar Annual Day VFX/SFX</div>
-      <div class="ach-detail">Sole producer of visual effects and sound design for school annual events. Coordinated with performers, managed post-production pipeline.</div>
+  <div class="work-item">
+    <div class="work-item-head">
+      <span class="work-item-title">Podar Annual Day — VFX / SFX Production</span>
+      <span class="work-item-date">2023 · Sole producer</span>
     </div>
-    <div class="ach featured">
-      <div class="ach-year">March 2026</div>
-      <div class="ach-title">NAS Coastal Trek Documentary</div>
-      <div class="ach-detail">Self-edited 44km coastal conservation trek footage. Captured wildlife, team moments, and the Olive Ridley turtle rescue. Featured in media publications.</div>
+    <div class="work-item-body">
+      Full pipeline. Met with performers, planned sequences, edited on the school's computers in the lab — <strong>sometimes until 10:30pm</strong>. The machines had bad specs. The software was AceMovi, free version, because that's what was available. You work with what you have. Output was professional regardless.
     </div>
-    <div class="ach">
-      <div class="ach-year">Ongoing</div>
-      <div class="ach-title">Instagram Reels & Carousel Posts</div>
-      <div class="ach-detail">Visual storytelling on social media. High engagement through thoughtful editing, music selection, and pacing.</div>
+  </div>
+
+  <div class="work-item" style="margin-top: 1px;">
+    <div class="work-item-head">
+      <span class="work-item-title">NAS Coastal Trek Documentary</span>
+      <span class="work-item-date">March 2026 · Self-edited</span>
+    </div>
+    <div class="work-item-body">
+      Shot and edited independently. 44km of footage across 3 days — wildlife, team moments, the Olive Ridley turtle rescue. The challenge was turning unstructured field footage into something with a narrative arc. Structured it as a journey: preparation → arrival → Arribada → rescue → reflection. Featured in Aajkal newspaper and Rotary Club Shine magazine.
+      <div style="margin-top: 0.75rem;">
+        <!-- ADD INSTAGRAM LINK HERE -->
+        <!-- <a href="INSTAGRAM_REEL_LINK" target="_blank" style="font-family: var(--mono); font-size: 11px; color: var(--accent);">watch on instagram →</a> -->
+        <span style="font-family: var(--mono); font-size: 11px; color: var(--muted);">// video link coming — remind to add Instagram reel URL</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="work-item" style="margin-top: 1px;">
+    <div class="work-item-head">
+      <span class="work-item-title">PMUN Trailer</span>
+      <span class="work-item-date">2025 · Promotional</span>
+    </div>
+    <div class="work-item-body">
+      Promotional trailer for Podar MUN. Made as part of the Chairperson role.
+      <div style="margin-top: 0.75rem;">
+        <!-- ADD INSTAGRAM LINK HERE -->
+        <!-- <a href="INSTAGRAM_REEL_LINK" target="_blank" style="font-family: var(--mono); font-size: 11px; color: var(--accent);">watch on instagram →</a> -->
+        <span style="font-family: var(--mono); font-size: 11px; color: var(--muted);">// video link coming — remind to add Instagram reel URL</span>
+      </div>
     </div>
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- TECHNICAL SKILLS -->
-<section id="technical">
-  <div class="section-label">Technical Skills</div>
-  <h2>What I Can Do</h2>
-  <div class="beyond">
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Video Editing:</strong> Cuts, transitions, pacing, and narrative flow. Adobe Premiere Pro and DaVinci Resolve expertise.</div>
+<!-- TOOLS - HONEST -->
+<section>
+  <div class="sec-head">
+    <span class="prompt">$</span>
+    <h2>cat <span class="kw">tools.txt</span></h2>
+  </div>
+  <div class="tool-row">
+    <div class="tool-entry">
+      <span class="tool-name">DaVinci Resolve</span>
+      <span class="tool-use">High-level projects, color grading, anything serious</span>
+      <span class="tool-badge primary">primary</span>
     </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Color Grading:</strong> Consistent color palette across footage. Mood-setting through color correction. Professional-grade color science.</div>
+    <div class="tool-entry">
+      <span class="tool-name">Kdenlive</span>
+      <span class="tool-use">Quick edits, short content, lightweight work</span>
+      <span class="tool-badge primary">primary</span>
     </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Motion Graphics & VFX:</strong> Title sequences, lower thirds, transitions, and visual effects. Adobe After Effects proficiency.</div>
+    <div class="tool-entry">
+      <span class="tool-name">AceMovi</span>
+      <span class="tool-use">Used for Annual Day edits — school lab had no better option</span>
+      <span class="tool-badge secondary">situational</span>
     </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Sound Design & Audio Mixing:</strong> Background music selection, sound effects, dialogue balancing, and audio mastering.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Cinematography Basics:</strong> Shot composition, framing, camera movement, and lighting awareness.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Project Management:</strong> Coordinating with teams, managing deadlines, and handling post-production pipelines.</div>
-    </div>
+  </div>
+  <div class="pull-quote">
+    The Annual Day was edited on AceMovi, free version, on school computers that struggled to play the footage back. That's the context. The output still worked.
   </div>
 </section>
 
 <hr class="divider">
 
-<!-- PODAR ANNUAL DAY -->
-<section id="podar-annual-day">
-  <div class="section-label">Case Study</div>
-  <h2>Podar Annual Day 2023-2025</h2>
-  <p style="color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem;">
-    For three consecutive years, I served as the sole VFX and SFX producer for Podar International School's Annual Day events. This wasn't just about editing footage—it was about understanding the vision of performers, translating that into visual effects, and delivering a polished product under tight deadlines.
-  </p>
-
-  <h2 style="margin-top: 2rem;">Responsibilities</h2>
-  <div class="beyond">
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Pre-Production:</strong> Met with performers and event coordinators to understand requirements. Planned VFX sequences and sound design.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Filming:</strong> Captured performances and rehearsals. Managed camera angles and ensured technical quality.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Post-Production:</strong> Edited footage, added visual effects, designed sound, and color-graded for consistency.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Delivery:</strong> Exported final videos in multiple formats for projection, streaming, and archival.</div>
-    </div>
+<!-- APPROACH -->
+<section>
+  <div class="sec-head">
+    <span class="prompt">$</span>
+    <h2>cat <span class="kw">how-i-work.txt</span></h2>
   </div>
-
-  <h2 style="margin-top: 2rem;">Key Achievements</h2>
-  <div class="ach-grid">
-    <div class="ach featured">
-      <div class="ach-title">Consistent Quality</div>
-      <div class="ach-detail">Maintained professional-grade output across three years despite increasing complexity and scale.</div>
-    </div>
-    <div class="ach featured">
-      <div class="ach-title">Tight Deadlines</div>
-      <div class="ach-detail">Delivered final videos within 48 hours of event completion. No delays, no compromises.</div>
-    </div>
-    <div class="ach">
-      <div class="ach-title">Audience Feedback</div>
-      <div class="ach-detail">Consistently positive feedback from students, parents, and staff. Videos became keepsakes for the school.</div>
-    </div>
-    <div class="ach">
-      <div class="ach-title">Technical Innovation</div>
-      <div class="ach-detail">Experimented with new techniques and tools each year. Stayed current with industry trends.</div>
-    </div>
-  </div>
+  <p class="prose">Editing is about deciding what to cut, not what to include. The instinct for pacing — knowing when a shot has overstayed, when a cut should come earlier — is mostly built by watching a lot and then doing a lot. I've been doing both.</p>
+  <p class="prose">Color grading is the part I care most about. It sets the tone more than most people realize. The trek footage had wildly inconsistent lighting — bright beach sun, dim evening, cloudy midday. Getting it to feel like one cohesive thing took more time than the actual assembly edit.</p>
+  <p class="prose">Sound design is usually the most underestimated part. In the Annual Day productions, getting the SFX to land at exactly the right frame made the difference between something that felt polished and something that just felt edited.</p>
 </section>
 
 <hr class="divider">
 
-<!-- NAS TREK DOCUMENTARY -->
-<section id="nas-trek">
-  <div class="section-label">Case Study</div>
-  <h2>NAS Coastal Trek Documentary (March 2026)</h2>
-  <p style="color: #ccc; font-size: 15px; line-height: 1.8; margin-bottom: 1.5rem;">
-    During the 44km coastal conservation trek through Odisha, I captured footage of wildlife, team moments, and the Olive Ridley turtle rescue. The challenge was editing raw, unstructured footage into a cohesive narrative that conveyed both the adventure and the conservation message.
-  </p>
-
-  <h2 style="margin-top: 2rem;">Editing Approach</h2>
-  <div class="beyond">
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Narrative Arc:</strong> Structured footage to follow the journey: preparation, arrival, discovery, rescue, reflection.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Emotional Pacing:</strong> Used music and cuts to build tension during the turtle rescue, then resolve with reflection.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Visual Consistency:</strong> Color-graded all footage to match, despite varying lighting conditions and camera equipment.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Sound Design:</strong> Layered ambient sounds, music, and dialogue to create immersion without overwhelming the viewer.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Message Clarity:</strong> Ensured the conservation message was clear without being preachy.</div>
-    </div>
+<!-- LINKS -->
+<section>
+  <div class="sec-head">
+    <span class="prompt">$</span>
+    <h2>ping <span class="kw">malhar</span></h2>
   </div>
-
-  <h2 style="margin-top: 2rem;">Impact</h2>
-  <p style="color: #ccc; font-size: 15px; line-height: 1.8;">
-    The documentary was featured in the Aajkal newspaper and the Kolkata Rotary Club's "Shine" magazine. It helped raise awareness about coastal conservation and Olive Ridley turtles. The video became a resource for the school's environmental club.
-  </p>
-</section>
-
-<hr class="divider">
-
-<!-- CREATIVE PROCESS -->
-<section id="process">
-  <div class="section-label">Process</div>
-  <h2>How I Work</h2>
-  <div class="beyond">
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Understand the Vision:</strong> Before touching any footage, I meet with stakeholders to understand the goal, tone, and target audience.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Organize Assets:</strong> Sort and label all footage, audio, and graphics. A clean project structure saves hours later.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Rough Cut:</strong> Create a first pass focusing on pacing and narrative flow, ignoring polish.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Sound Design:</strong> Add music, sound effects, and dialogue. Often the most impactful part of editing.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Color Grading:</strong> Create visual consistency and set the mood through color correction.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>VFX & Graphics:</strong> Add titles, transitions, and visual effects. These should enhance, not distract.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Review & Iterate:</strong> Get feedback from stakeholders and refine based on their input.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Final Export:</strong> Render in appropriate formats for different platforms (4K for archival, 1080p for web, etc.).</div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- TOOLS & SOFTWARE -->
-<section id="tools">
-  <div class="section-label">Tools & Software</div>
-  <h2>What I Use</h2>
-  <div style="margin-top: 2rem;">
-    <h3 style="margin-bottom: 1rem;">Video Editing</h3>
-    <div class="tags" style="margin-bottom: 2rem;">
-      <span class="tag accent">Adobe Premiere Pro</span>
-      <span class="tag accent">DaVinci Resolve</span>
-      <span class="tag">Final Cut Pro</span>
-    </div>
-
-    <h3 style="margin-bottom: 1rem;">Color Grading & Effects</h3>
-    <div class="tags" style="margin-bottom: 2rem;">
-      <span class="tag accent">DaVinci Resolve</span>
-      <span class="tag accent">Adobe After Effects</span>
-      <span class="tag">Adobe Photoshop</span>
-    </div>
-
-    <h3 style="margin-bottom: 1rem;">Audio</h3>
-    <div class="tags" style="margin-bottom: 2rem;">
-      <span class="tag accent">Adobe Audition</span>
-      <span class="tag">Audacity</span>
-    </div>
-
-    <h3 style="margin-bottom: 1rem;">Motion Graphics</h3>
-    <div class="tags">
-      <span class="tag accent">Adobe After Effects</span>
-      <span class="tag">Cinema 4D</span>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- SKILLS USED -->
-<section id="skills-used">
-  <div class="section-label">Skills & Competencies</div>
-  <h2>What I Bring</h2>
-  <div style="margin-top: 2rem;">
-    <div class="tags">
-      <span class="tag accent">Video Editing</span>
-      <span class="tag accent">Color Grading</span>
-      <span class="tag accent">Motion Graphics</span>
-      <span class="tag accent">Sound Design</span>
-      <span class="tag accent">VFX</span>
-      <span class="tag accent">Storytelling</span>
-      <span class="tag">Cinematography</span>
-      <span class="tag">Project Management</span>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- FUTURE DIRECTION -->
-<section id="future">
-  <div class="section-label">Future</div>
-  <h2>What's Next?</h2>
-  <div class="beyond">
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Documentary Series:</strong> Create a series of short documentaries on topics I care about (wildlife, technology, social issues).</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Educational Content:</strong> Produce video tutorials and educational content for YouTube.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Commercial Work:</strong> Take on freelance video production projects for small businesses and organizations.</div>
-    </div>
-    <div class="beyond-item">
-      <div class="beyond-dot"></div>
-      <div class="beyond-text"><strong>Advanced VFX:</strong> Deepen skills in 3D motion graphics and advanced visual effects.</div>
-    </div>
-  </div>
-</section>
-
-<hr class="divider">
-
-<!-- LINKS & RESOURCES -->
-<section id="links" style="text-align: center;">
-  <h2>See My Work</h2>
-  <p style="color: var(--muted); margin-bottom: 2rem;">Check out my video work on social media and portfolio.</p>
-  <div class="contact-links">
-    <a href="https://instagram.com/imalharr" target="_blank" class="btn">Instagram Reels</a>
-    <a href="https://linkedin.com/in/malharm" target="_blank" class="btn">LinkedIn</a>
-    <a href="mailto:meghmalharbhowmick@gmail.com" class="btn btn-primary">Inquire About Projects</a>
+  <div class="contact-grid">
+    <a href="https://instagram.com/imalharr" target="_blank" class="contact-item">
+      <div class="contact-platform">Instagram</div>
+      <div class="contact-handle">@imalharr — reels & trek footage</div>
+    </a>
+    <a href="https://linkedin.com/in/malharm" target="_blank" class="contact-item">
+      <div class="contact-platform">LinkedIn</div>
+      <div class="contact-handle">in/malharm</div>
+    </a>
+    <a href="../projects.html" class="contact-item">
+      <div class="contact-platform">Back</div>
+      <div class="contact-handle">← all projects</div>
+    </a>
+    <a href="../index.html" class="contact-item">
+      <div class="contact-platform">Home</div>
+      <div class="contact-handle">← imalharr.github.io</div>
+    </a>
   </div>
 </section>
 
