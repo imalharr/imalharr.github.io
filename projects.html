@@ -3,110 +3,153 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - Meghmalhar Bhowmick</title>
-  <meta name="description" content="Portfolio of projects by Meghmalhar Bhowmick. IoT systems, Roblox games, embedded systems, and more.">
+  <title>Projects — Meghmalhar Bhowmick</title>
+  <meta name="description" content="Projects by Meghmalhar Bhowmick. IoT systems, embedded hardware, MUN governance, VFX production.">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- PROJECTS HERO -->
-<section id="hero" style="min-height: auto; padding: 8rem 2rem 4rem;">
-  <div class="section-label">Projects</div>
-  <h1>Things I've actually built.</h1>
-  <p class="hero-sub" style="margin-bottom: 0;">From IoT systems to game design, each project is a problem solved or a skill learned.</p>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-eyebrow">Projects</div>
+  <h1>Things I've<br><span class="dim">actually built</span><span class="acc">.</span></h1>
+  <p class="hero-desc">Each one is a problem I found interesting enough to do something about.</p>
 </section>
 
 <hr class="divider">
 
-<!-- PROJECTS GRID -->
+<!-- PROJECTS -->
 <section id="projects-section">
-  <div class="projects-grid">
-    <!-- Project 1: ESP32 Obstacle Detection -->
-    <div class="project-card">
-      <h3>ESP32 Obstacle Detection System</h3>
-      <p>Navigation assistant for visually impaired users. Proximity-adaptive buzzer frequency, Blynk app integration for remote control, real-time web server with dark-themed UI, and LCD display support.</p>
-      <div class="tags" style="margin-bottom: 1rem;">
-        <span class="tag accent">ESP32</span>
-        <span class="tag accent">C++</span>
-        <span class="tag accent">IoT</span>
-        <span class="tag">Accessibility</span>
+  <div class="sec-head">
+    <span class="prompt">$</span>
+    <h2>ls ~/<span class="kw">projects</span> -la</h2>
+  </div>
+  <div class="projects">
+
+    <div class="project">
+      <div>
+        <div class="project-name">ESP32 Obstacle Detection System</div>
+        <div class="project-desc">Navigation assistant for visually impaired users. Proximity-adaptive buzzer frequency — the closer the obstacle, the higher the pitch. Blynk app integration for remote mute and control. Real-time web dashboard with dark UI. LCD display. Built during and after IIIT Delhi EDC 2025.</div>
+        <div class="tags">
+          <span class="tag green">ESP32</span>
+          <span class="tag green">C++</span>
+          <span class="tag green">IoT</span>
+          <span class="tag">Blynk</span>
+          <span class="tag">HC-SR04</span>
+          <span class="tag">Accessibility</span>
+        </div>
       </div>
-      <div class="project-card-footer">
-        <a href="projects/esp32-obstacle-detection.html">Learn More</a>
-        <a href="https://github.com/imalharr" target="_blank">GitHub</a>
-      </div>
+      <div class="project-arrow">→</div>
     </div>
 
-    <!-- Project 2: Archipelago Roblox -->
-    <div class="project-card">
-      <h3>Archipelago - Roblox Social Game</h3>
-      <p>Tropical paradise map with multiple themed islands. Central hub, trampoline park, jungle/beach/mountain race circuits, boat race, karaoke island, dance floor, and mocktail bar. Strong voice chat integration and custom music playlist GUI.</p>
-      <div class="tags" style="margin-bottom: 1rem;">
-        <span class="tag accent">Roblox</span>
-        <span class="tag accent">Lua</span>
-        <span class="tag accent">Game Design</span>
-        <span class="tag">Social Gaming</span>
+    <div class="project">
+      <div>
+        <div class="project-name">Soil Moisture Sensor Web Interface</div>
+        <div class="project-desc">ESP32-based real-time soil monitoring system. Live sensor data pushed to a locally hosted web server. Custom dark-themed UI with live data visualization. IoT applied to agriculture and environmental monitoring.</div>
+        <div class="tags">
+          <span class="tag green">ESP32</span>
+          <span class="tag green">IoT</span>
+          <span class="tag green">Web UI</span>
+          <span class="tag">Sensors</span>
+          <span class="tag">Agriculture</span>
+        </div>
       </div>
-      <div class="project-card-footer">
-        <a href="projects/archipelago-roblox.html">Learn More</a>
-      </div>
+      <div class="project-arrow">→</div>
     </div>
 
-    <!-- Project 3: Soil Moisture Sensor -->
-    <div class="project-card">
-      <h3>Soil Moisture Sensor Web Interface</h3>
-      <p>ESP32-based real-time soil monitoring system. Custom dark-themed web UI with live data visualization. Demonstrates IoT fundamentals applied to agriculture and environmental monitoring.</p>
-      <div class="tags" style="margin-bottom: 1rem;">
-        <span class="tag accent">ESP32</span>
-        <span class="tag accent">IoT</span>
-        <span class="tag accent">Web UI</span>
-        <span class="tag">Sensors</span>
+    <div class="project">
+      <div>
+        <div class="project-name">MUN Governance & Policy Writing</div>
+        <div class="project-desc">Designed delegate evaluation systems, marking schemes, and committee guides from scratch for PMUN 2025-26 as Chairperson. Created the Codex Magnifica — a full chair's guide and compendium. Also wrote the Charter of the Reclaimed World for an AHCPARS crisis committee (post-apocalyptic governance framework). OSCE delegate at THSMUN 2025 and LMCMUN.</div>
+        <div class="tags">
+          <span class="tag green">Policy Writing</span>
+          <span class="tag green">Governance</span>
+          <span class="tag">Crisis Committee</span>
+          <span class="tag">OSCE</span>
+          <span class="tag">Chairperson</span>
+        </div>
       </div>
-      <div class="project-card-footer">
-        <a href="projects/soil-moisture-sensor.html">Learn More</a>
-        <a href="https://github.com/imalharr" target="_blank">GitHub</a>
-      </div>
+      <div class="project-arrow">→</div>
     </div>
 
-    <!-- Project 4: VFX & Video Production -->
-    <div class="project-card">
-      <h3>VFX & Video Production</h3>
-      <p>Sole producer of VFX and SFX for Podar Annual Day 2023. Self-edited NAS coastal trek documentary. Strong visual composition, color grading, and storytelling through video.</p>
-      <div class="tags" style="margin-bottom: 1rem;">
-        <span class="tag accent">Video Editing</span>
-        <span class="tag accent">VFX</span>
+    <div class="project">
+      <div>
+        <div class="project-name">VFX & Video Production</div>
+        <div class="project-desc">Sole VFX and SFX producer for Podar Annual Day 2023. Handled the full pipeline from concept to final render. Self-edited the NAS coastal trek documentary — shot, assembled, and graded entirely independently. Strong visual composition and color grading instinct built through practice.</div>
+        <div class="tags">
+          <span class="tag green">VFX / SFX</span>
+          <span class="tag green">Video Editing</span>
+          <span class="tag">Color Grading</span>
+          <span class="tag">Documentary</span>
+        </div>
+      </div>
+      <div class="project-arrow">→</div>
+    </div>
+
+    <div class="project">
+      <div>
+        <div class="project-name">This Portfolio</div>
+        <div class="project-desc">Vanilla HTML, CSS, and JavaScript. Terminal aesthetic. No frameworks, no build tools, no AI slop. Deployed on GitHub Pages. The design decisions are documented if you want to look at the commit history.</div>
+        <div class="tags">
+          <span class="tag green">HTML / CSS</span>
+          <span class="tag green">JavaScript</span>
+          <span class="tag">GitHub Pages</span>
+        </div>
+      </div>
+      <a href="https://github.com/imalharr/imalharr.github.io" target="_blank" class="project-arrow" style="text-decoration: none;">↗</a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-head">
+    <span class="prompt">$</span>
+    <h2>cat <span class="kw">skills.txt</span></h2>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-group">
+      <div class="skill-group-label">Hardware & Embedded</div>
+      <div class="tags">
+        <span class="tag green">ESP32</span>
+        <span class="tag green">Arduino</span>
+        <span class="tag green">Sensors</span>
+        <span class="tag green">PCB basics</span>
+        <span class="tag">Microcontrollers</span>
+        <span class="tag">IoT</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Programming</div>
+      <div class="tags">
+        <span class="tag green">C++</span>
+        <span class="tag green">Python</span>
+        <span class="tag green">JavaScript</span>
+        <span class="tag green">Lua</span>
+        <span class="tag">HTML / CSS</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <div class="skill-group-label">Tools & Platforms</div>
+      <div class="tags">
+        <span class="tag green">Git / GitHub</span>
+        <span class="tag green">Linux</span>
+        <span class="tag green">Blynk</span>
+        <span class="tag">Roblox Studio</span>
         <span class="tag">Adobe Suite</span>
       </div>
-      <div class="project-card-footer">
-        <a href="projects/vfx-video-production.html">Learn More</a>
-      </div>
     </div>
-
-    <!-- Project 5: MUN Governance Documents -->
-    <div class="project-card">
-      <h3>MUN Governance & Policy Writing</h3>
-      <p>Designed marking schemes, committee guides, and delegate evaluation systems from scratch. Created "Codex Magnifica" (chair's guide) and "Charter of the Reclaimed World" (post-apocalyptic governance document).</p>
-      <div class="tags" style="margin-bottom: 1rem;">
-        <span class="tag accent">Policy Writing</span>
-        <span class="tag accent">Leadership</span>
-        <span class="tag">Governance</span>
-      </div>
-      <div class="project-card-footer">
-        <a href="projects/mun-governance.html">Learn More</a>
-      </div>
-    </div>
-
-    <!-- Project 6: Personal Portfolio Website -->
-    <div class="project-card">
-      <h3>Personal Portfolio Website</h3>
-      <p>Multi-page responsive portfolio built with vanilla HTML, CSS, and JavaScript. Dark theme with accent colors. Showcases projects, achievements, and writing. Deployed on GitHub Pages.</p>
-      <div class="tags" style="margin-bottom: 1rem;">
-        <span class="tag accent">HTML/CSS</span>
-        <span class="tag accent">JavaScript</span>
-        <span class="tag accent">Web Design</span>
-      </div>
-      <div class="project-card-footer">
-        <a href="https://github.com/imalharr/imalharr.github.io" target="_blank">GitHub</a>
+    <div class="skill-group">
+      <div class="skill-group-label">Soft Skills</div>
+      <div class="tags">
+        <span class="tag green">Public Speaking</span>
+        <span class="tag green">Leadership</span>
+        <span class="tag green">Technical Writing</span>
+        <span class="tag">Event Management</span>
+        <span class="tag">Team Building</span>
       </div>
     </div>
   </div>
@@ -114,59 +157,29 @@
 
 <hr class="divider">
 
-<!-- SKILLS SECTION -->
-<section id="skills">
-  <div class="section-label">Technical Skills</div>
-  <h2>What I work with.</h2>
-  <div style="margin-top: 2rem;">
-    <h3 style="margin-bottom: 1rem;">Hardware & Embedded Systems</h3>
-    <div class="tags" style="margin-bottom: 2rem;">
-      <span class="tag accent">ESP32</span>
-      <span class="tag accent">Arduino</span>
-      <span class="tag accent">Sensors</span>
-      <span class="tag accent">PCB Design</span>
-      <span class="tag">Microcontrollers</span>
-    </div>
-
-    <h3 style="margin-bottom: 1rem;">Programming Languages</h3>
-    <div class="tags" style="margin-bottom: 2rem;">
-      <span class="tag accent">C++</span>
-      <span class="tag accent">Python</span>
-      <span class="tag accent">JavaScript</span>
-      <span class="tag accent">Lua</span>
-      <span class="tag">HTML/CSS</span>
-    </div>
-
-    <h3 style="margin-bottom: 1rem;">Tools & Platforms</h3>
-    <div class="tags" style="margin-bottom: 2rem;">
-      <span class="tag accent">Git/GitHub</span>
-      <span class="tag accent">Roblox Studio</span>
-      <span class="tag accent">Adobe Creative Suite</span>
-      <span class="tag">Linux</span>
-      <span class="tag">Microsoft Office</span>
-    </div>
-
-    <h3 style="margin-bottom: 1rem;">Soft Skills</h3>
-    <div class="tags">
-      <span class="tag accent">Public Speaking</span>
-      <span class="tag accent">Leadership</span>
-      <span class="tag accent">Event Management</span>
-      <span class="tag accent">Technical Writing</span>
-      <span class="tag">Team Building</span>
-    </div>
+<!-- CONTACT CTA -->
+<section id="projects-cta">
+  <div class="sec-head">
+    <span class="prompt">$</span>
+    <h2>ping <span class="kw">malhar</span></h2>
   </div>
-</section>
-
-<hr class="divider">
-
-<!-- CTA -->
-<section id="projects-cta" style="text-align: center;">
-  <h2>Interested in collaborating?</h2>
-  <p style="color: var(--muted); margin-bottom: 2rem;">Let's build something cool together.</p>
-  <div class="contact-links">
-    <a href="https://github.com/imalharr" target="_blank" class="btn">GitHub</a>
-    <a href="https://linkedin.com/in/malharm" target="_blank" class="btn">LinkedIn</a>
-    <a href="mailto:meghmalharbhowmick@gmail.com" class="btn btn-primary">Get in Touch</a>
+  <div class="contact-grid">
+    <a href="https://github.com/imalharr" target="_blank" class="contact-item">
+      <div class="contact-platform">GitHub</div>
+      <div class="contact-handle">imalharr</div>
+    </a>
+    <a href="https://linkedin.com/in/malharm" target="_blank" class="contact-item">
+      <div class="contact-platform">LinkedIn</div>
+      <div class="contact-handle">in/malharm</div>
+    </a>
+    <a href="mailto:meghmalharbhowmick@gmail.com" class="contact-item">
+      <div class="contact-platform">Email</div>
+      <div class="contact-handle">meghmalharbhowmick@gmail.com</div>
+    </a>
+    <a href="/" class="contact-item">
+      <div class="contact-platform">Back</div>
+      <div class="contact-handle">← home</div>
+    </a>
   </div>
 </section>
 

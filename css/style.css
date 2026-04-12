@@ -52,9 +52,10 @@ body {
 }
 
 /* ── SCROLLBAR ── */
-::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 2px; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.25); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.4); }
 
 /* ── SELECTION ── */
 ::selection { background: rgba(74,222,128,0.2); color: var(--accent); }
@@ -153,6 +154,11 @@ section {
   font-weight: 500;
   font-family: var(--mono);
   letter-spacing: 0;
+}
+
+.sec-head h2 .kw {
+  color: var(--text);
+  font-weight: 600;
 }
 
 /* horizontal rule between sections */
