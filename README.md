@@ -164,10 +164,8 @@ This portfolio is personal and for demonstration purposes. Feel free to use it a
 ## Contact
 
 - Email: meghmalharbhowmick@gmail.com
-- LinkedIn: linkedin.com/in/malharm
-- GitHub: github.com/imalharr
-- Instagram: instagram.com/imalharr
+- LinkedIn: https://linkedin.com/in/malharm
+- GitHub: https://github.com/imalharr
+- Instagram: https://instagram.com/imalharr
 
 ---
-
-Built with care.
